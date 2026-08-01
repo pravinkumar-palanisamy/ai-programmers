@@ -27,7 +27,7 @@ def get_recipe_from_text(recipe_text: str) -> Recipe:
     """
     Convert recipe text into a structured Recipe object using OpenAI.
     """
-    client = genai.Client(api_key="AIzaSyBRNHJ-hh8j1Sq4iYQqVX8cuGjAXS0XVjU")
+    client = genai.Client()
 
     # Make the API call
     response = client.interactions.create(
