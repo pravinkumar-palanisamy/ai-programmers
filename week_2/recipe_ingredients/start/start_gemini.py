@@ -4,6 +4,7 @@ from typing import List
 from pprint import pprint
 import os
 from google import genai
+import keys
 
 class Ingredient(BaseModel):
     """
@@ -27,7 +28,7 @@ def get_recipe_from_text(recipe_text: str) -> Recipe:
     """
     Convert recipe text into a structured Recipe object using OpenAI.
     """
-    client = genai.Client()
+    client = genai.Client(api_key=keys.api_key)
 
     # Make the API call
     response = client.interactions.create(
